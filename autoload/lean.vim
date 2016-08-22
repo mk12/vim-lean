@@ -1,13 +1,19 @@
 function! lean#replace()
-	execute '%s/\<Pi\>/Π/ge'
-	execute '%s/\<fun\>/λ/ge'
-	execute '%s/\<forall\>/∀/ge'
-	execute '%s/\<exists\>/∃/ge'
-	execute '%s/<->/↔/ge'
-	execute '%s/->/→/ge'
-	execute '%s/\~/¬/ge'
-	execute '%s/\/\\/∧/ge'
-	execute '%s/\\\//∨/ge'
+	let user_gdefault = &gdefault
+	try
+		set nogdefault
+		%s/\<Pi\>/Π/ge
+		%s/\<fun\>/λ/ge
+		%s/\<forall\>/∀/ge
+		%s/\<exists\>/∃/ge
+		%s/<->/↔/ge
+		%s/->/→/ge
+		%s/\~/¬/ge
+		%s/\/\\/∧/ge
+		%s/\\\//∨/ge
+	finally    
+		let &gdefault = user_gdefault
+	endtry
 endfunction
 
 function! lean#check()
@@ -19,7 +25,7 @@ function! lean#check()
 		bdel
 	else
 		setlocal buftype=nofile
-		setlocal bufhidden=hide
+		setlocal bufhidden=delete
 		setlocal noswapfile
 		setlocal filetype=lean-output
 	endif
