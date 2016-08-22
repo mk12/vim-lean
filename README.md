@@ -12,7 +12,10 @@ Plug 'mk12/vim-lean', { 'for': 'lean' }
 
 ## Usage
 
-To use syntax highlighting, open a file with the `.lean` extension. To replace ASCII strings such as `forall`, `Pi`, and `->` with Unicode symbols, use the command `:LeanSymbolize`.
+Other than syntax highlighting, this plugin provides two commands:
+
+- `:LeanSymbolize`: Replace `forall`, `Pi`, `->`, etc., with Unicode characters.
+- `:LeanCheck`: Run lean on the file and show the output in a split.
 
 ## License
 
