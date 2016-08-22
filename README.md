@@ -14,8 +14,8 @@ Plug 'mk12/vim-lean', { 'for': 'lean' }
 
 Other than syntax highlighting, this plugin provides two commands:
 
-- `:LeanSymbolize`: Replace `forall`, `Pi`, `->`, etc., with Unicode characters.
-- `:LeanCheck`: Run lean on the file and show the output in a split.
+- `:LeanReplace`: Replace `forall`, `Pi`, `->`, etc., with Unicode characters.
+- `:LeanCheck`: Run lean on the file and show the output in a split (if there is any).
 
 ## License
 

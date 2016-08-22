@@ -1,2 +1,2 @@
-command! LeanSymbolize call lean#symbolize()
+command! LeanReplace call lean#replace()
 command! LeanCheck call lean#check()
