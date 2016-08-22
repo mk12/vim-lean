@@ -16,7 +16,7 @@ function! lean#check()
 	endif
 	silent execute "below new | 0read !lean #"
 	if line("$") == 1 && getline(1) == ""
-		close
+		bdel
 	else
 		setlocal buftype=nofile
 		setlocal bufhidden=hide
