@@ -11,6 +11,7 @@ function! lean#replace()
 		%s/\~/¬/ge
 		%s/\/\\/∧/ge
 		%s/\\\//∨/ge
+		%s/|>/▸/ge
 	finally    
 		let &gdefault = user_gdefault
 	endtry
