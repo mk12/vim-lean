@@ -13,7 +13,7 @@ function! lean#replace()
 		%s/<=/≤/ge
 		%s/>=/≥/ge
 		%s/\<forall\>/∀/ge
-		%s/\<exists\>/∃/ge
+		%s/\<exists\>\.\@!/∃/ge
 		%s/\<fun\>/λ/ge
 		%s/\<Pi\>/Π/ge
 		%s/\<Sigma\>/∑/ge
