@@ -2,15 +2,17 @@ function! lean#replace()
 	let user_gdefault = &gdefault
 	try
 		set nogdefault
-		%s/\<Pi\>/Π/ge
-		%s/\<fun\>/λ/ge
-		%s/\<forall\>/∀/ge
-		%s/\<exists\>/∃/ge
-		%s/<->/↔/ge
-		%s/->/→/ge
 		%s/\~/¬/ge
 		%s/\/\\/∧/ge
 		%s/\\\//∨/ge
+		%s/<->/↔/ge
+		%s/->/→/ge
+		%s/\<forall\>/∀/ge
+		%s/\<exists\>/∃/ge
+		%s/\<fun\>/λ/ge
+		%s/\~=/≠/ge
+		%s/\<Pi\>/Π/ge
+		%s/\<Sigma\>/∑/ge
 		%s/|>/▸/ge
 		%s/\^-1/⁻¹/ge
 	finally
