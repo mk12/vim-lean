@@ -3,24 +3,31 @@ function! lean#replace()
 	try
 		set nogdefault
 
-		" standard
-		%s/\~=/≠/ge
-		%s/\~/¬/ge
+		" ASCII
 		%s/\/\\/∧/ge
 		%s/\\\//∨/ge
 		%s/<->/↔/ge
 		%s/->/→/ge
 		%s/<=/≤/ge
 		%s/>=/≥/ge
+		%s/\~=/≠/ge
+		%s/\<not\>\.\@!/¬/ge
 		%s/\<forall\>/∀/ge
 		%s/\<exists\>\.\@!/∃/ge
 		%s/\<fun\>/λ/ge
 		%s/\<Pi\>/Π/ge
 		%s/\<Sigma\>/∑/ge
 
-		" nonstandard
-		%s/|>/▸/ge
-		%s/\^-1/⁻¹/ge
+		" Escape sequences
+		%s/\\S\>/Σ/ge
+		%s/\\x\>/×/ge
+		%s/\\N\>/ℕ/ge
+		%s/\\Z\>/ℤ/ge
+		%s/\\Q\>/ℚ/ge
+		%s/\\R\>/ℝ/ge
+		%s/\\-1\>/⁻¹/ge
+		%s/\\tr\>/⬝/ge
+		%s/\\t\>/▸/ge
 	finally
 		let &gdefault = user_gdefault
 	endtry
