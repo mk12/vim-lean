@@ -33,30 +33,42 @@ function! lean#replace()
 	endtry
 endfunction
 
-" Dictionary that maps lean windows to lean-output windows
-let s:dict = {}
-
 function! lean#check()
+	" Do nothing if we're in the output window.
 	if &filetype == "lean-output"
 		return
 	endif
 
+	" Find the output window for this buffer.
+	let num = bufnr("%")
 	let name = fnameescape(bufname("%"))
-	let key = bufnr("%")
-	if has_key(s:dict, key) && buflisted(s:dict[key][1])
-		let nr = s:dict[key][0]
-		silent execute nr . "wincmd w | %d | 0read !lean " . name
-	else
-		silent execute "below new | 0read !lean " . name
-		let s:dict[key] = [winnr(), bufnr("%")]
+	let found = 0
+	for i in range(1, winnr("$"))
+		if getwinvar(i, "lean_check_num", -1) == num
+			silent execute i . "wincmd w | %d"
+			let found = 1
+			break
+		endif
+	endfor
+
+	" Create a new output window if there wasn't one.
+	if !found
+		below new
+		let w:lean_check_num = num
 	endif
 
+	" Run lean and read in its output.
+	silent execute "0read !lean " . name
 	if line("$") == 1 && getline(1) == ""
 		call append(line("^"), "No output")
 	endif
+
+	" Set options (do it every time just in case).
 	setlocal buftype=nofile
 	setlocal bufhidden=delete
 	setlocal noswapfile
 	setlocal filetype=lean-output
-	silent execute "wincmd p"
+
+	" Return to the previous window.
+	silent wincmd p
 endfunction
