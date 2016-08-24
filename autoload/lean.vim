@@ -42,7 +42,7 @@ function! lean#check()
 	endif
 
 	let name = fnameescape(bufname("%"))
-	let key = tabpagenr() . "," . winnr()
+	let key = bufnr("%")
 	if has_key(s:dict, key) && buflisted(s:dict[key][1])
 		let nr = s:dict[key][0]
 		silent execute nr . "wincmd w | %d | 0read !lean " . name
