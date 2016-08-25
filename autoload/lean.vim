@@ -3,14 +3,7 @@ function! lean#replace()
 	try
 		set nogdefault
 
-		" ASCII
-		%s/\/\\/∧/ge
-		%s/\\\//∨/ge
-		%s/<->/↔/ge
-		%s/->/→/ge
-		%s/<=/≤/ge
-		%s/>=/≥/ge
-		%s/\~=/≠/ge
+		" ASCII keywords
 		%s/\<not\>\.\@!/¬/ge
 		%s/\<forall\>/∀/ge
 		%s/\<exists\>\.\@!/∃/ge
@@ -18,9 +11,19 @@ function! lean#replace()
 		%s/\<Pi\>/Π/ge
 		%s/\<Sigma\>/∑/ge
 
+		" ASCII symbols
+		%s/\/\\/∧/ge
+		%s/\\\//∨/ge
+		%s/<->/↔/ge
+		%s/->/→/ge
+		%s/<=/≤/ge
+		%s/>=/≥/ge
+		%s/\~=/≠/ge
+
 		" Escape sequences
 		%s/\\S\>/Σ/ge
 		%s/\\x\>/×/ge
+		%s/\\u+/⊎/ge
 		%s/\\N\>/ℕ/ge
 		%s/\\Z\>/ℤ/ge
 		%s/\\Q\>/ℚ/ge
@@ -28,6 +31,12 @@ function! lean#replace()
 		%s/\\-1\>/⁻¹/ge
 		%s/\\tr\>/⬝/ge
 		%s/\\t\>/▸/ge
+		%s/\\in\>/∈/ge
+		%s/\\nin\>/∉/ge
+		%s/\\i\>/∩/ge
+		%s/\\un\>/∪/ge
+		%s/\\subeq\>/⊆/ge
+		%s/\\comp\>/∘/ge
 	finally
 		let &gdefault = user_gdefault
 	endtry
