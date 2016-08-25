@@ -46,6 +46,10 @@ function! lean#check()
 	for i in range(1, winnr("$"))
 		if getwinvar(i, "lean_check_num", -1) == num
 			silent execute i . "wincmd w | %d"
+			if &filetype != "lean-output"
+				unlet w:lean_check_num
+				break
+			endif
 			let found = 1
 			break
 		endif
