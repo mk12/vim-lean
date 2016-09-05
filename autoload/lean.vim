@@ -37,6 +37,7 @@ function! lean#replace()
 		%s/\\un\>/∪/ge
 		%s/\\subeq\>/⊆/ge
 		%s/\\comp\>/∘/ge
+		%s/\\empty\>/∅/ge
 	finally
 		let &gdefault = user_gdefault
 	endtry
