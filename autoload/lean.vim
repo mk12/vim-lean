@@ -35,6 +35,7 @@ function! lean#replace()
 		%s/\\nin\>/∉/ge
 		%s/\\i\>/∩/ge
 		%s/\\un\>/∪/ge
+		%s/\\sub\>/⊂/ge
 		%s/\\subeq\>/⊆/ge
 		%s/\\comp\>/∘/ge
 		%s/\\empty\>/∅/ge
