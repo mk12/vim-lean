@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.lean set ft=lean
+autocmd BufRead,BufNewFile *.lean set filetype=lean
