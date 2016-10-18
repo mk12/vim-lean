@@ -9,7 +9,7 @@ function! lean#replace()
 		%s/\C\<exists\>\.\@!/∃/ge
 		%s/\C\<fun\>/λ/ge
 		%s/\C\<Pi\>/Π/ge
-		%s/\C\<Sigma\>/∑/ge
+		%s/\C\<Sigma\>/Σ/ge
 
 		" ASCII symbols
 		%s/\/\\/∧/ge
