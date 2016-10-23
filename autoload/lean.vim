@@ -5,8 +5,8 @@ function! lean#replace()
 
 		" ASCII keywords
 		%s/\C\%(prefix\s\+\)\@<!\<not\>\.\@!/¬/ge
-		%s/\C\%(prefix\s\+\)\@<!\<exists\>\.\@!/∃/ge
 		%s/\C\<forall\>/∀/ge
+		%s/\C\<exists\>\.\@!/∃/ge
 		%s/\C\<fun\>/λ/ge
 		%s/\C\<Pi\>/Π/ge
 		%s/\C\<Sigma\>/Σ/ge
