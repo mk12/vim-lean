@@ -19,6 +19,8 @@ function! lean#replace()
 		%s/<=/≤/ge
 		%s/>=/≥/ge
 		%s/\~=/≠/ge
+		%s/(|/⟨/ge
+		%s/|)/⟩/ge
 
 		" Escape sequences
 		" ₀₁₂₃₄₅₆₇₈₉
@@ -50,6 +52,8 @@ function! lean#replace()
 		%s/\C\\subeq\>/⊆/ge
 		%s/\C\\comp\>/∘/ge
 		%s/\C\\empty\>/∅/ge
+		%s/\C\\f</‹/ge
+		%s/\C\\f>/›/ge
 	finally
 		let &gdefault = user_gdefault
 	endtry
