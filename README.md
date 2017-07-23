@@ -1,6 +1,6 @@
 # Vim Lean
 
-This repository is a Pathogen/Vundle/Plug plugin for the [Lean Theorem Prover][1]. The files `ftdetect/lean.vim` and `syntax/lean.vim` are taken directly from the [official repository][2].
+This repository is a Pathogen/Vundle/Plug plugin for the [Lean Theorem Prover][1]. The files `ftdetect/lean.vim` and `syntax/lean.vim` are taken directly from the [official lean.vim plugin][2].
 
 ## Install
 
@@ -12,15 +12,17 @@ Plug 'mk12/vim-lean', { 'for': 'lean' }
 
 ## Usage
 
-Other than syntax highlighting, this plugin provides two commands:
+Why use this instead of the official plugin? Because it provides two useful commands:
 
 - `:LeanReplace`: Replace `forall`, `Pi`, `->`, etc., with Unicode characters.
 - `:LeanCheck`: Run lean on the file and show the output in a split (if there is any).
+
+Put `let g:lean_auto_replace = 1` in your `vimrc` if you want to run `:LeanReplace` automatically on every save.
 
 ## License
 
 The Lean Theorem Prover is available under the Apache License 2.0; see [LICENSE](LICENSE) for details.
 
 [1]: https://github.com/leanprover/lean
-[2]: https://github.com/leanprover/lean/tree/a8db8bc61a0b00379b3d0be8ecaf0d0858dc82ee/src/vim
+[2]: https://github.com/leanprover/lean.vim
 [3]: https://github.com/junegunn/vim-plug
