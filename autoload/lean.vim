@@ -8,8 +8,6 @@ function! lean#replace()
 		%s/\C\<forall\>/∀/ge
 		%s/\C\<exists\>\.\@!/∃/ge
 		%s/\C\<fun\>/λ/ge
-		%s/\C\<Pi\>/Π/ge
-		%s/\C\<Sigma\>/Σ/ge
 
 		" ASCII symbols
 		%s/\/\\/∧/ge
@@ -22,8 +20,39 @@ function! lean#replace()
 		%s/(|/⟨/ge
 		%s/|)/⟩/ge
 
+		" Greek letters
+		%s/\C\\Gamma\>/Γ/ge
+		%s/\C\\Delta\>/Δ/ge
+		%s/\C\\Theta\>/Θ/ge
+		%s/\C\\Lambda\>/Λ/ge
+		%s/\C\\Xi\>/Ξ/ge
+		%s/\C\\Pi\>/Π/ge
+		%s/\C\\Sigma\>/Σ/ge
+		%s/\C\\Phi\>/Φ/ge
+		%s/\C\\Psi\>/Ψ/ge
+		%s/\C\\Omega\>/Ω/ge
+		%s/\C\\alpha\>/α/ge
+		%s/\C\\beta\>/β/ge
+		%s/\C\\gamma\>/γ/ge
+		%s/\C\\delta\>/δ/ge
+		%s/\C\\epsilon\>/ε/ge
+		%s/\C\\zeta\>/ζ/ge
+		%s/\C\\eta\>/η/ge
+		%s/\C\\theta\>/θ/ge
+		%s/\C\\iota\>/ι/ge
+		%s/\C\\lambda\>/λ/ge
+		%s/\C\\mu\>/μ/ge
+		%s/\C\\xi\>/ξ/ge
+		%s/\C\\pi\>/π/ge
+		%s/\C\\rho\>/ρ/ge
+		%s/\C\\sigma\>/σ/ge
+		%s/\C\\tau\>/τ/ge
+		%s/\C\\phi\>/φ/ge
+		%s/\C\\chi\>/χ/ge
+		%s/\C\\psi\>/ψ/ge
+		%s/\C\\omega\>/ω/ge
+
 		" Escape sequences
-		" ₀₁₂₃₄₅₆₇₈₉
 		%s/\C\\_\?0\>/₀/ge
 		%s/\C\\_\?1\>/₁/ge
 		%s/\C\\_\?2\>/₂/ge
