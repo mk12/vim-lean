@@ -4,7 +4,7 @@ function! lean#replace()
 		set nogdefault
 
 		" ASCII keywords
-		%s/\C\%(--.*\|prefix\s\+\)\@<!\<not\>\.\@!/¬/ge
+		%s/\C\%(--.*\|prefix\s\+\)\@<!\<not \.\@!/¬/ge
 		%s/\C\<forall\>/∀/ge
 		%s/\C\<exists\>\.\@!/∃/ge
 		%s/\C\<fun\>/λ/ge
